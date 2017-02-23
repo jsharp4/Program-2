@@ -15,11 +15,10 @@ public class JobList implements ListADT<Job> {
 
 	public void add(Job item) {
 		Listnode<Job> curr = head;
-		Listnode<job> newNode = new Listnode<job>(item);
-		if (numItems > 0) {
-			newNode.setNext(curr.getNext());
+		while (curr.getNext() != null) {
+			curr = curr.getNext();
 		}
-		curr.setNext(newNode);
+		curr.setNext(new Listnode<Job>(item);
 		numItems++;
 	}
 
