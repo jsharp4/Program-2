@@ -145,10 +145,7 @@ public class Game{
 		System.out.println("You have " + list.size() + " left in the game!");
 		while (itr.hasNext()) {
 			Job currJob = itr.next();
-			System.out.println("At position: " + position + " Job Name: " +
-					currJob.getJobName() + " Job Points: " + currJob.getPoints()
-					+ " Steps Remaining: " + (currJob.getTimeUnits() - 
-					currJob.getSteps()));
+			System.out.println("At position " + position + " " + currJob);
 			position++;
 		}
 
