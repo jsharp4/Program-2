@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class Game{
 
     /**
@@ -19,9 +21,7 @@ public class Game{
      * duration used to determine the length of the game.
      */
     public Game(int seed, int timeToPlay){
-        /**
-         * TODO: Initializes all member variables
-         */
+    	list = new JobList();
     	this.timeToPlay = timeToPlay;
     	jobSimulator = new JobSimulator(seed);
     	scoreBoard = new Scoreboard();
@@ -32,8 +32,7 @@ public class Game{
      * @returns the amount of time left in the game.
      */
     public int getTimeToPlay() {
-        //TODO: return the amount of time left
-        return 0;
+        return timeToPlay;
     }
 
     /**
@@ -43,7 +42,7 @@ public class Game{
      *        the remaining duration of the game
      */
     public void setTimeToPlay(int timeToPlay) {
-        //TODO: Setter for amount of time to play
+        this.timeToPlay = timeToPlay;
     }
 
     /**
@@ -53,15 +52,14 @@ public class Game{
      * else returns false
      */
     public boolean isOver(){
-        //TODO: check if the game is over or not
-        return false;
+        return timeToPlay <= 0;
     }
     /**
      * This method simply invokes the simulateJobs method
      * in the JobSimulator object.
      */
     public void createJobs(){
-        //TODO: Invoke the simulator to create jobs
+        jobSimulator.simulateJobs(list, timeToPlay);
 
     }
 
@@ -69,8 +67,7 @@ public class Game{
      * @returns the length of the Joblist.
      */
     public int getNumberOfJobs(){
-        //TODO: Get the number of jobs in the JobList
-        return 0;
+        return list.size();
     }
 
     /**
@@ -84,10 +81,8 @@ public class Game{
      *      The job to be inserted in the list.
      */
     public void addJob(int pos, Job item){
-        /**
-         * TODO: Add a job in the list
-         * based on position
-         */
+    	list.add(pos, item);
+    	timeToPlay -= pos;
     }
 
     /**
@@ -96,7 +91,7 @@ public class Game{
      *      The job to be inserted in the list.
      */
     public void addJob(Job item){
-        //TODO: Add a job in the joblist
+        list.add(item);
     }
 
     /**
@@ -120,8 +115,19 @@ public class Game{
      *      The amount of time the given job is to be worked on for.
      */
     public Job updateJob(int index, int duration){
-        //TODO: As per instructions in comments
-        return null;
+        Job updated = list.remove(index);
+        if (timeToPlay <= duration) {
+        	duration = timeToPlay;
+        }
+        
+        updated.setSteps(updated.getSteps() + duration);
+        
+        if (updated.isCompleted()) {
+        	scoreBoard.updateScoreBoard(updated);
+        }
+        
+        timeToPlay -= index;
+        return updated;
     }
 
     /**
@@ -133,7 +139,18 @@ public class Game{
      *
      */
     public void displayActiveJobs(){
-        //TODO: Display all the active jobs
+		Iterator<Job> itr = list.iterator();
+		int position = 0;
+		
+		System.out.println("You have " + list.size() + " left in the game!");
+		while (itr.hasNext()) {
+			Job currJob = itr.next();
+			System.out.println("At position: " + position + " Job Name: " +
+					currJob.getJobName() + " Job Points: " + currJob.getPoints()
+					+ " Steps Remaining: " + (currJob.getTimeUnits() - 
+					currJob.getSteps()));
+			position++;
+		}
 
     }
 
@@ -141,7 +158,7 @@ public class Game{
      * This function simply invokes the displayScoreBoard method in the ScoreBoard class.
      */
     public void displayCompletedJobs(){
-        //TODO: Display all the completed jobs
+        scoreBoard.displayScoreBoard();
 
     }
 
@@ -150,7 +167,6 @@ public class Game{
      * @return the value calculated by getTotalScore
      */
     public int getTotalScore(){
-        //TODO: Return the total score accumulated
-        return 0;
+        return scoreBoard.getTotalScore();
     }
 }
