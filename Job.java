@@ -46,7 +46,7 @@ public class Job{
      *          false otherwise
      */
     public boolean isCompleted() {
-        return timeUnits == steps;
+        return timeUnits <= steps;
     }
 
     /**

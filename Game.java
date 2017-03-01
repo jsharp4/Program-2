@@ -115,6 +115,7 @@ public class Game{
      *      The amount of time the given job is to be worked on for.
      */
     public Job updateJob(int index, int duration){
+    	//TODO: error checking
         Job updated = list.remove(index);
         if (timeToPlay <= duration) {
         	duration = timeToPlay;
@@ -127,6 +128,7 @@ public class Game{
         }
         
         timeToPlay -= index;
+        timeToPlay -= duration;
         return updated;
     }
 
@@ -141,8 +143,7 @@ public class Game{
     public void displayActiveJobs(){
 		Iterator<Job> itr = list.iterator();
 		int position = 0;
-		
-		System.out.println("You have " + list.size() + " left in the game!");
+		System.out.println("Job Listing");
 		while (itr.hasNext()) {
 			Job currJob = itr.next();
 			System.out.println("At position " + position + " " + currJob);

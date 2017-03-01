@@ -18,7 +18,7 @@ public class JobList implements ListADT<Job> {
 		while (curr.getNext() != null) {
 			curr = curr.getNext();
 		}
-		curr.setNext(new Listnode<Job>(item);
+		curr.setNext(new Listnode<Job>(item));
 		numItems++;
 	}
 
@@ -64,7 +64,7 @@ public class JobList implements ListADT<Job> {
 	public Job remove(int pos) {
 		Listnode<Job> curr = head;
 		
-		for(int i = 0; i < pos - 1; ++i) {
+		for(int i = 0; i < pos; ++i) {
 			curr = curr.getNext();
 		}
 		Job oldJob = curr.getNext().getData();
