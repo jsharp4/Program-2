@@ -1,7 +1,7 @@
 /************************************************************
   p2 Task List (must be completed and submitted for Team Building 102)
   
-  Team Number: _________   Team Name: ____________________________
+  Team Number: ___35______   Team Name: _____Java Badgers_______________________
 
 In an effort to help students improve the process of learning to
 to work together in their teams and as a way to provide each team with 
@@ -49,12 +49,12 @@ Task List Usage:
   Complete this table:
   Code letter = Student name
   ---------------------------
-              = 
-              =
-              =
-              =
-              =
-              =
+          L   = Lindsey
+          A   = Allison
+          J   = Jon
+          M   = Michael
+          F   = Faust
+          K   = Kendra
               =
               
 - Task 2: Define the JobList class so that it implements the ListADT
