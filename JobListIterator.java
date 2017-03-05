@@ -14,22 +14,45 @@
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
+/**
+ * This class implements Iterator<Job> and establishes the methods hasNext() and
+ * next().  
+ * <p>Bugs: None that we are aware of
+ *
+ * @author Jon Sharp, Michael Yang, Lindsey Bohr, Allison Quick
+ */
 public class JobListIterator implements Iterator<Job> {
 	private Listnode<Job> items;
+	//count for the number of items in the list
 	private int numItems;
+	//pointer for the position within the list
 	private int position;
-	
+	/*This constructor assigns the parameters items and numItems to
+	*their corresponding variables and marks position as 0.
+	*@param Listnode<Job> items
+	*	Job items stored a Listnode
+	*@param int numItems
+	*	number of items in a Listnode
+	*/
 	public JobListIterator(Listnode<Job> items, int numItems) {
 		this.items = items;
 		this.numItems = numItems;
 		position = 0;
-	}
-	
+	} //closes constructor
+	/*This method checks to see if there are more items in the listNode
+	*@return true
+	*	iff the position is less than numItems
+	*/
 	public boolean hasNext() {
 		return position < numItems;
-	}
-
+	} //closes hasNext()
+	/*This method returns the data at a particular location and
+	*increments the position. 
+	* @throws NoSuchElementException()
+	*	If there is not a next value, the exception is thrown
+	*@return items.getData()
+	*	returns the data at a particular position
+	*/
 	public Job next() {
 		if (!hasNext()) {
 			throw new NoSuchElementException();
@@ -37,6 +60,6 @@ public class JobListIterator implements Iterator<Job> {
 		items = items.getNext();
 		position++;
 		return items.getData();
-	}
+	} //closes next()
 
-}
+}//closes JobListIterator
