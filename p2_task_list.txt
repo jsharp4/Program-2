@@ -127,6 +127,11 @@ Task List Usage:
   - Get input value and echo to screen
   - output the job list
 
+
+
+- Task 11: Add Exception-checking code to each class
+  -
+  
 - ADD MORE SUB-TASKS TO ANY OF THE ABOVE TASKS
 
 - ADD MORE TASKS AS YOU IDENTIFY WORK THAT MUST BE DONE
