@@ -63,12 +63,12 @@ public class JobList implements ListADT<Job> {
 	*@param int pos
 	* 	position that the item will be added to Listnode
 	*@throws IndexOutOfBoundsException()
-	*	if the pos is greater than numItems
+	*	if the pos is greater than numItems or less than 0
 	*@param Job item
 	*	an item that is to be added to Listnode
 	*/
 	public void add(int pos, Job item) {
-		if(pos > numItems){
+		if(pos < 0 || pos >= numItems){
 			throw new IndexOutOfBoundsException();
 		}//closes if statement
 		if(item == null) throw new IllegalArgumentException();
@@ -105,12 +105,12 @@ public class JobList implements ListADT<Job> {
 	*@param int pos
 	*	position index value used to retrieve information
 	*@throws IndexOutOfBoundsException()
-	*	if the pos is greater than numItems
+	*	if the pos is greater than numItems or less than 0
 	*@return curr.getData()
 	*	data in Listnode at a certain position
 	*/
 	public Job get(int pos) {
-		if(pos > numItems){
+		if(pos<= 0 || pos >= numItems){
 			throw new IndexOutOfBoundsException();
 		}//closes if statement
 		Listnode<Job> curr = head;
