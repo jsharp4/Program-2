@@ -79,16 +79,16 @@ Task List Usage:
        +J isEmpty()
        +J iterator()
        
-- Task 3: Write a Test_JobList class 
++ Task 3: Write a Test_JobList class 
   This can be written before Task 2 is finished.
   Just write test methods that will pass when JobList is finished
-  - add a main method
-  - add a test to create a JobList
-  - test add(item) method
-  - test add(pos,item) method
-  - test ...
-  - test ...
-  - test ...
+  + add a main method
+  + add a test to create a JobList
+  + test add(item) method
+  + test add(pos,item) method
+  + test ...
+  + test ...
+  + test ...
   
 + Task 4: Write a JobListIterator class
   Make sure that it is implemented as described in the assignment.
@@ -96,7 +96,7 @@ Task List Usage:
   +J hasNext()
   +J next()
   
-- Task 5: Add a test to your Test_JobList class to test that the 
++ Task 5: Add a test to your Test_JobList class to test that the 
   JobList can return an iterator and that the JobListIterator
   works as expected.
   
@@ -107,7 +107,7 @@ Task List Usage:
 +J Task 7: Complete the Game class implementation by completing the
   TODO tags.
   
-- Task 8: Re-read the assignment and map out the actions that must
++ Task 8: Re-read the assignment and map out the actions that must
   happen in the GameApp (main) class.  There is much to do here and
   it may be much more convenient to write methods and call them 
   from the main method.
@@ -128,12 +128,13 @@ Task List Usage:
   J+ output the job list
 
 + Task 11: Add Exception-checking code to each class
-  - Game.java
-  - GameApp.java
-  - Job.java
-  - JobList.java
-  - JobListIterator.java
+  + Game.java
+  + GameApp.java
+  + Job.java
+  +AKJ JobList.java
+  + JobListIterator.java
   
+ +AL Task 12: Comment and Style all classes
   
 - ADD MORE SUB-TASKS TO ANY OF THE ABOVE TASKS
 
