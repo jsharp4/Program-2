@@ -90,7 +90,7 @@ Task List Usage:
   + test ...
   
 + Task 4: Write a JobListIterator class
-  Make sure that it is implemented as described in the assignment.
+  +M Make sure that it is implemented as described in the assignment.
   +J add a constructor 
   +J hasNext()
   +J next()
@@ -121,17 +121,17 @@ Task List Usage:
       
 + Task 10: Define a main_menu_loop() method: 
   Put code for one iteration of game play
-  J+ Get the outputs to display in the right order
-  J+ Add a call to this method from the main method
-  J+ Get input value and echo to screen
-  J+ output the job list
+  +J Get the outputs to display in the right order
+  +J Add a call to this method from the main method
+  +J Get input value and echo to screen
+  +J output the job list
 
 + Task 11: Add Exception-checking code to each class
   +K GameApp.java
   +AKJ JobList.java
   +K JobListIterator.java
   
- +AL Task 12: Comment and Style all classes
+ +ALM Task 12: Comment and Style all classes
   
 - ADD MORE SUB-TASKS TO ANY OF THE ABOVE TASKS
 
