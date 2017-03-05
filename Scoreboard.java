@@ -56,7 +56,7 @@ public class Scoreboard implements ScoreboardADT {
 	 * This class updates ScoreBoard by adding the job to scores.
 	 * 
 	 * @param job
-	 *	
+	 *	object to be added to the JobList scores
  	 */
 	public void updateScoreBoard(Job job) {
 		scores.add(job);
