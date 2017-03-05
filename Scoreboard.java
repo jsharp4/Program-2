@@ -60,6 +60,12 @@ public class Scoreboard implements ScoreboardADT {
 	 *	object to be added to the JobList scores
  	 */
 	public void updateScoreBoard(Job job) {
+		try {
+			if (job == null) {
+				throw new IllegalArgumentException();
+			}
+		} catch (IllegalArgumentException e) {
+			System.out.print("Cannot update a null job.");
 		scores.add(job);
 	} //closes updateScoreBoard
 	/**
