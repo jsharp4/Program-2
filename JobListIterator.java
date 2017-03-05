@@ -74,6 +74,10 @@ public class JobListIterator implements Iterator<Job> {
 		}
 	} //closes next()
 	
+	/*removes the Job at the current position in the list. However, it is not
+	*supported by JobListIterator, and will throw an UnsupportedOperationException
+	*if thrown.
+	*/
 	public void remove() {
 		try {
 			throw new UnsupportedOperationException();
