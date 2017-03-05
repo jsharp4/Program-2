@@ -40,8 +40,8 @@ public class GameApp{
 	}//closes constructor
 
 	/**
-	 * Main function which takes the command line arguments and instantiate the
-	 * GameApp class.
+	 * Main function which takes the command line arguments and instantiate 
+	 *the GameApp class.
 	 * The main function terminates when the game ends.
 	 * Use the getIntegerInput function to read inputs from console
 	 * @throws NumberFormatException
@@ -62,24 +62,28 @@ public class GameApp{
 			GameApp app = new GameApp(seed, timeToPlay);
 			app.start();
 		} catch (NumberFormatException e) {
-			System.out.print("Invalid command line input. Goodbye.");
+			System.out.
+				print("Invalid command line input. Goodbye.");
 		}//closes catch
 
 	}//closes main
 
 	/**
-	 * This method is called by main to start the game and runs until the game is over.
-	 *It calls the game's class and it allows for the creation of jobs.
+	 * This method is called by main to start the game and runs until the 
+	 * game is over. It calls the game's class and it allows for the 
+	 * creation of jobs.
 	 */
 	private void start(){
 		//while the game is not over, run the following
 		while(!game.isOver()) {
-			System.out.println("You have " + game.getTimeToPlay() + " left in the game!");
+			System.out.println("You have " + game.getTimeToPlay() 
+					   + " left in the game!");
 			game.createJobs();
 			game.displayActiveJobs();
 			int jobIndex = getIntegerInput("Select a job to work on: ");
 			while (jobIndex < 0 || jobIndex >= game.getNumberOfJobs()) {
-				jobIndex = getIntegerInput("Invalid position. Select a job to work on: ");
+				jobIndex = getIntegerInput
+					("Invalid position. Select a job to work on: ");
 			}
 			System.out.println(jobIndex);
 			
@@ -98,11 +102,13 @@ public class GameApp{
 				System.out.println(returnIndex);
 				if (returnIndex < 0 || returnIndex > game.getNumberOfJobs()) {
 					returnIndex = game.getNumberOfJobs();
-				}//closes if (returnIndex < 0 || returnIndex >= game.getNumberOfJobs()) 
+				}//closes if (returnIndex < 0 || returnIndex 
+						//>= game.getNumberOfJobs()) 
 				game.addJob(returnIndex, currJob);
 			}//closes if (!currJob.isCompleted())
 			else {
-				System.out.println("Job completed! Current Score: " + game.getTotalScore());
+				System.out.println("Job completed! Current Score: " 
+						   + game.getTotalScore());
 				System.out.println("Total score: " + game.getTotalScore());
 				game.displayCompletedJobs();
 			}//closes else statement
@@ -125,7 +131,8 @@ public class GameApp{
 	public static int getIntegerInput(String prompt) {
 		System.out.print(prompt);
 		while ( ! STDIN.hasNextInt() ) {
-			System.out.print(STDIN.next()+" is not an int.  Please enter an integer.");
+			System.out.print(STDIN.next()+ " is not an int. " 
+					 + "Please enter an integer.");
 		}//closes while loop
 		return STDIN.nextInt();
 	}//closes getIntegerInput(prompt)
