@@ -21,7 +21,7 @@ import java.util.Iterator;
  *
  * <p>Bugs: none that we are aware of
  *
- * @author Jon Sharp, Lindsey Bohr, Allison Quick, Michael Yang
+ * @author Jon Sharp, Lindsey Bohr, Allison Quick, Michael Yang, Kendra Raczek
  */
 public class Game{
 
