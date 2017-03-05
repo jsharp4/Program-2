@@ -71,6 +71,7 @@ public class JobList implements ListADT<Job> {
 		if(pos > numItems){
 			throw new IndexOutOfBoundsException();
 		}//closes if statement
+		if(item == null) throw new IllegalArgumentException();
 		Listnode<Job> curr = head;
 		Listnode<Job> newJob = new Listnode<Job>(item);
 		//traverses through list until position is reached
