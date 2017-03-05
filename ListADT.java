@@ -11,7 +11,7 @@
 //
 //////////////////////////// 80 columns wide //////////////////////////////////
 /**
- * This interface extends Iterable and is used in: JobList?
+ * This interface extends Iterable and is implemented by JobList.
  *
  * <p>Bugs: None that we are aware of
  *
