@@ -139,7 +139,6 @@ public class Game{
      *		the updated Job that is removed from the ListNode
      */
     public Job updateJob(int index, int duration){
-    	//TODO: error checking
         Job updated = list.remove(index);
 	    //set the timeToPlay to duration if it is less than duration
         if (timeToPlay <= duration) {
