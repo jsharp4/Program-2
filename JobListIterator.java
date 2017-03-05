@@ -20,7 +20,7 @@ import java.util.NoSuchElementException;
  * next().  
  * <p>Bugs: None that we are aware of
  *
- * @author Jon Sharp, Michael Yang, Lindsey Bohr, Allison Quick
+ * @author Jon Sharp, Michael Yang, Lindsey Bohr, Allison Quick, Kendra Raczek
  */
 public class JobListIterator implements Iterator<Job> {
 	private Listnode<Job> items;
