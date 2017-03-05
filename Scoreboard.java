@@ -55,7 +55,8 @@ public class Scoreboard implements ScoreboardADT {
 	} //closes getTotalScore()
 	/**
 	 * This class updates ScoreBoard by adding the job to scores.
-	 * 
+	*@throws IllegalArgumentException()
+	*	if the job is null
 	 * @param job
 	 *	object to be added to the JobList scores
  	 */
