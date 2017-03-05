@@ -45,6 +45,8 @@ public class JobList implements ListADT<Job> {
 	/*This method adds Job item to the end of list.
 	*@param Job item
 	*	an item that is to be added at the end of the listnode
+	*@throws IllegalArgumentException()
+	*	if item is null
 	*/
 	public void add(Job item) {
 		try {
@@ -69,6 +71,8 @@ public class JobList implements ListADT<Job> {
 	* 	position that the item will be added to Listnode
 	*@throws IndexOutOfBoundsException()
 	*	if the pos is greater than numItems or less than 0
+	*@throws IllegalArgumentException()
+	*	if item is null
 	*@param Job item
 	*	an item that is to be added to Listnode
 	*/
@@ -148,6 +152,8 @@ public class JobList implements ListADT<Job> {
 	/*This method removes a Job item from a position in the Listnode
 	*@param int pos
 	*	index position in 
+	*@throws IndexOutOfBoundsException()
+	*	if the pos is greater than numItems or less than 0
 	*@return oldJob
 	*	the data that is beng removed
 	*/
