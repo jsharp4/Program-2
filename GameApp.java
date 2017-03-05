@@ -71,7 +71,6 @@ public class GameApp{
 	 *It calls the game's class and it allows for the creation of jobs.
 	 */
 	private void start(){
-		//TODO: The interactive game logic goes here
 		//while the game is not over, run the following
 		while(!game.isOver()) {
 			System.out.println("You have " + game.getTimeToPlay() + " left in the game!");
