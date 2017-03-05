@@ -60,10 +60,15 @@ public class JobList implements ListADT<Job> {
 	/*This method adds Job item to a chosen position
 	*@param int pos
 	* 	position that the item will be added to Listnode
+	*@throws IndexOutOfBoundsException()
+	*	if the pos is greater than numItems
 	*@param Job item
 	*	an item that is to be added to Listnode
 	*/
 	public void add(int pos, Job item) {
+		if(pos > numItems){
+			throw new IndexOutOfBoundsException();
+		}//closes if statement
 		Listnode<Job> curr = head;
 		Listnode<Job> newJob = new Listnode<Job>(item);
 		//traverses through list until position is reached
@@ -96,10 +101,15 @@ public class JobList implements ListADT<Job> {
 	/*This accessor method returns a Job item at a given position
 	*@param int pos
 	*	position index value used to retrieve information
+	*@throws IndexOutOfBoundsException()
+	*	if the pos is greater than numItems
 	*@return curr.getData()
 	*	data in Listnode at a certain position
 	*/
 	public Job get(int pos) {
+		if(pos > numItems){
+			throw new IndexOutOfBoundsException();
+		}//closes if statement
 		Listnode<Job> curr = head;
 		//traverses through the Listnode to the pos
 		for (int i = 0; i < pos; i++) {
