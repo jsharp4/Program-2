@@ -9,6 +9,7 @@
 // Author2: Allison Quick, aquick2@wisc.edu, aquick2, LEC 001
 // Author3: Lindsey Bohr, bohr@wisc.edu, bohr, LEC 001
 // Author4: Michael Yang, yang363@wisc.edu, yang363, LEC 001
+// Author5: Kendra Raczek, raczek@wisc.edu, raczek, LEC 001
 //
 //////////////////////////// 80 columns wide //////////////////////////////////
 
@@ -46,6 +47,7 @@ public class JobList implements ListADT<Job> {
 	*	an item that is to be added at the end of the listnode
 	*/
 	public void add(Job item) {
+		if(item == null) throw new IllegalArgumentException();
 		//sets a curr reference to head
 		Listnode<Job> curr = head;
 		//traverses through list to find the end
