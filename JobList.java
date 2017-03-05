@@ -47,7 +47,11 @@ public class JobList implements ListADT<Job> {
 	*	an item that is to be added at the end of the listnode
 	*/
 	public void add(Job item) {
-		if(item == null) throw new IllegalArgumentException();
+		try {
+			if(item == null) throw new IllegalArgumentException();
+		} catch (IllegalArgumentException e) {
+			System.out.println("Illegal Argument");
+		}
 		//sets a curr reference to head
 		Listnode<Job> curr = head;
 		//traverses through list to find the end
@@ -58,6 +62,7 @@ public class JobList implements ListADT<Job> {
 		curr.setNext(new Listnode<Job>(item));
 		//updates numItems
 		numItems++;
+		
 	} //closes add(item)
 	/*This method adds Job item to a chosen position
 	*@param int pos
@@ -68,10 +73,16 @@ public class JobList implements ListADT<Job> {
 	*	an item that is to be added to Listnode
 	*/
 	public void add(int pos, Job item) {
-		if(pos < 0 || pos > numItems){
-			throw new IndexOutOfBoundsException();
-		}//closes if statement
-		if(item == null) throw new IllegalArgumentException();
+		try {
+			if(pos < 0 || pos > numItems){
+				throw new IndexOutOfBoundsException();
+			}//closes if statement
+			if(item == null) throw new IllegalArgumentException();
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("Index Out Of Bounds");
+		} catch (IllegalArgumentException f) {
+			System.out.println("Illegal Argument");
+		}
 		Listnode<Job> curr = head;
 		Listnode<Job> newJob = new Listnode<Job>(item);
 		//traverses through list until position is reached
@@ -111,11 +122,12 @@ public class JobList implements ListADT<Job> {
 	*/
 	public Job get(int pos) {
 		try {
-		if(pos < 0 || pos > numItems){
-			throw new IndexOutOfBoundsException();
-		}//closes if statement
-		} catch (IndexOutOfBoundException e) {
+			if(pos < 0 || pos > numItems){
+				throw new IndexOutOfBoundsException();
+			}//closes if statement
+		} catch (IndexOutOfBoundsException e) {
 			System.out.print("This job cannot be found.");
+		}
 		Listnode<Job> curr = head;
 		//traverses through the Listnode to the pos
 		for (int i = 0; i < pos; i++) {
@@ -140,6 +152,13 @@ public class JobList implements ListADT<Job> {
 	*	the data that is beng removed
 	*/
 	public Job remove(int pos) {
+		try {
+			if(pos < 0 || pos > numItems){
+				throw new IndexOutOfBoundsException();
+			}//closes if statement
+		} catch (IndexOutOfBoundsException e) {
+			System.out.print("This job cannot be found.");
+		}
 		Listnode<Job> curr = head;
 		//traverses to the desired position
 		for(int i = 0; i < pos; ++i) {
