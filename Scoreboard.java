@@ -70,7 +70,6 @@ public class Scoreboard implements ScoreboardADT {
 		System.out.println("The jobs completed:");
 		//allows the scores to be iterated through
 		Iterator<Job> itr = scores.iterator();
-		int position = 0;
 		//iterate through list and print out the job name and points.
 		while (itr.hasNext()) {
 			Job currJob = itr.next();
