@@ -52,7 +52,8 @@ public class GameApp{
 			GameApp app = new GameApp(seed, timeToPlay);
 			app.start();
 		} catch (NumberFormatException e) {
-			System.exit(0);;
+			System.out.print("Invalid command line input. Goodbye.");
+			System.exit(0);
 		}
 
 		//TODO: Take input from command line, process it and add error checking
