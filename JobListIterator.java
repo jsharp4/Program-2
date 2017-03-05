@@ -61,5 +61,14 @@ public class JobListIterator implements Iterator<Job> {
 		position++;
 		return items.getData();
 	} //closes next()
+	
+	public void remove() {
+		try {
+			throw new UnsupportedOperationException();
+		}
+		catch (UnsupportedOperationException e){
+			System.out.print("JobListIterator does not support the remove() method.");
+		}
+	}
 
 }//closes JobListIterator
