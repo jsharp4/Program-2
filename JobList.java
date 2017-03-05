@@ -110,9 +110,12 @@ public class JobList implements ListADT<Job> {
 	*	data in Listnode at a certain position
 	*/
 	public Job get(int pos) {
+		try {
 		if(pos < 0 || pos > numItems){
 			throw new IndexOutOfBoundsException();
 		}//closes if statement
+		} catch (IndexOutOfBoundException e) {
+			System.out.print("This job cannot be found.");
 		Listnode<Job> curr = head;
 		//traverses through the Listnode to the pos
 		for (int i = 0; i < pos; i++) {
