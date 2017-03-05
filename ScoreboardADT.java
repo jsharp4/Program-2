@@ -10,25 +10,32 @@
 // Author3: Lindsey Bohr, bohr@wisc.edu, bohr, LEC 001
 //
 //////////////////////////// 80 columns wide //////////////////////////////////
-
+	/**
+ 	 * This interface is used in Scoreboard and declares the methods:
+	 *getTotalScore(), updateScoreBoard(Job job), and displayScoreBoard().
+	 *
+	 * <p>Bugs: None that we are aware of
+	 *
+	 * @author Jon Sharp, Lindsey Bohr, Allison Quick
+	 */
 	public interface ScoreboardADT {
-		 /**
-	     * Calculates the total combined number of points for every job in the scoreboard.
-	     * 
-	     * @return The summation of all the points for every job currently stored in the scoreboard.
-	     */
+		/**
+	    	 * Will allow a class to calculate the total combined number of
+		 *points for every job in the scoreboard.
+	     	 */
 		int getTotalScore();
 		
-		 /**
-	     * Inserts the given job at the end of the scoreboard.
-	     * 
-	     * @param job 
-	     * 		The job that has been completed and is to be inserted into the list.
-	     */
-	    void updateScoreBoard(Job job);
+		/**
+	    	 * Will allow a class to insert a given job at the end of the scoreboard.
+	     	 * 
+	     	 * @param job 
+	    	 * 	The job that has been completed and is to be inserted into the list.
+	    	 */
+	 	void updateScoreBoard(Job job);
 	
-	    /**
-	     * Prints out a summary of all jobs currently stored in the scoreboard. The formatting must match the example exactly.
-	     */
-	    void displayScoreBoard();
+	    	/**
+	    	 * Will allow a class to print out a summary of all jobs currently stored in 
+	   	  *the scoreboard. The formatting must match the example exactly.
+	    	 */
+	   	void displayScoreBoard();
 	}
