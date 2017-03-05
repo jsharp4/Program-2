@@ -53,7 +53,6 @@ public class GameApp{
 			app.start();
 		} catch (NumberFormatException e) {
 			System.out.print("Invalid command line input. Goodbye.");
-			System.exit(0);
 		}
 
 		//TODO: Take input from command line, process it and add error checking
