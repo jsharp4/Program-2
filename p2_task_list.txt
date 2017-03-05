@@ -55,7 +55,6 @@ Task List Usage:
           M   = Michael
           F   = Faust
           K   = Kendra
-              =
               
 + Task 2: Define the JobList class so that it implements the ListADT
   as described in p0.  List sub-tasks here.
