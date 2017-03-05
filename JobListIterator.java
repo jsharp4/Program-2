@@ -36,6 +36,13 @@ public class JobListIterator implements Iterator<Job> {
 	*	number of items in a Listnode
 	*/
 	public JobListIterator(Listnode<Job> items, int numItems) {
+		try {
+			if (items == null) {
+				throw new IllegalArgumentException();
+			}
+		} catch (IllegalArgumentException e) {
+			System.out.print("Cannot create an iterator with with a null list.");
+		}
 		this.items = items;
 		this.numItems = numItems;
 		position = 0;
