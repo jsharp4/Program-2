@@ -8,6 +8,7 @@
 // Author1: Jon Sharp, jsharp4@wisc.edu, jsharp4, LEC 001
 // Author2: Allison Quick, aquick2@wisc.edu, aquick2, LEC 001
 // Author3: Lindsey Bohr, bohr@wisc.edu, bohr, LEC 001
+// Author4: Kendra Raczek, raczek@wisc.edu, raczek, LEC 001
 //
 //////////////////////////// 80 columns wide //////////////////////////////////
 
