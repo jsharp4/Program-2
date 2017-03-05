@@ -33,13 +33,13 @@ Task List Usage:
    Anyone can work on any subtask (not just the person who identified
    the sub task).
 
-- Task 0: Each team member must carefully read the assignment and put
++ Task 0: Each team member must carefully read the assignment and put
   some notes together regarding how they might approach the work 
   required for this programming assignment.  Plan to meet in person
   to discuss how you can best complete this assignment.  Do you want 
   to work in smaller groups on specific tasks?
      
-- Task 1: Assign Code Letters for each Team Member
++ Task 1: Assign Code Letters for each Team Member
 
   Each team member is assigned a code letter.
   It can be the first letter of your name or any other unique letter.
@@ -57,27 +57,27 @@ Task List Usage:
           K   = Kendra
               =
               
-- Task 2: Define the JobList class so that it implements the ListADT
++ Task 2: Define the JobList class so that it implements the ListADT
   as described in p0.  List sub-tasks here.
   
-    - Create an Eclipse project for p2
-    - Download provided files, need these for sure:
-      - ListADT interface
-      - Listnode class
-      - Job class
-    - Add p2 files to your p2 project
-    - make sure that all classes and interfaces are in the default package
-    - Create a new class named JobList and add stub methods for
+    + Create an Eclipse project for p2
+    + Download provided files, need these for sure:
+      + ListADT interface
+      + Listnode class
+      + Job class
+    + Add p2 files to your p2 project
+    + make sure that all classes and interfaces are in the default package
+    +J Create a new class named JobList and add stub methods for
       all required methods of the ListADT
-    - Add declaration to "implements ListADT<Job>" to this class
-    - implement each method
-       - add(item)
-       - add(pos,item)
-       - remove(pos)
-       - ...
-       - ...
-       - ...
-       - ...
+    +J Add declaration to "implements ListADT<Job>" to this class
+    + implement each method
+       +J add(item)
+       +J add(pos,item)
+       +J remove(pos)
+       +J contains(Job item)
+       +J Job get(int pos)
+       +J isEmpty()
+       +J iterator()
        
 - Task 3: Write a Test_JobList class 
   This can be written before Task 2 is finished.
@@ -90,21 +90,21 @@ Task List Usage:
   - test ...
   - test ...
   
-- Task 4: Write a JobListIterator class
++ Task 4: Write a JobListIterator class
   Make sure that it is implemented as described in the assignment.
-  - add a constructor 
-  - hasNext()
-  - next()
+  +J add a constructor 
+  +J hasNext()
+  +J next()
   
 - Task 5: Add a test to your Test_JobList class to test that the 
   JobList can return an iterator and that the JobListIterator
   works as expected.
   
-- Task 6: Write the Scoreboard class so that it implements all
++J Task 6: Write the Scoreboard class so that it implements all
   required operations of the ScoreboardADT. Review the Game class
   to see how the Scoreboard class is being used.
   
-- Task 7: Complete the Game class implementation by completing the
++J Task 7: Complete the Game class implementation by completing the
   TODO tags.
   
 - Task 8: Re-read the assignment and map out the actions that must
@@ -112,7 +112,7 @@ Task List Usage:
   it may be much more convenient to write methods and call them 
   from the main method.
   
-- Task 9: Implement the GameApp class incrementally.  
++ Task 9: Implement the GameApp class incrementally.  
   Compile and run after each of these items
   - main: get the command line arguments (use the getIntegerInput method)
   - Add the Welcome message as output
@@ -120,16 +120,14 @@ Task List Usage:
     - Try calling Game methods to see if Game was constructed
       and initialized correctly.
       
-- Task 10: Define a main_menu_loop() method: 
++ Task 10: Define a main_menu_loop() method: 
   Put code for one iteration of game play
-  - Get the outputs to display in the right order
-  - Add a call to this method from the main method
-  - Get input value and echo to screen
-  - output the job list
+  J+ Get the outputs to display in the right order
+  J+ Add a call to this method from the main method
+  J+ Get input value and echo to screen
+  J+ output the job list
 
-
-
-- Task 11: Add Exception-checking code to each class
++ Task 11: Add Exception-checking code to each class
   - Game.java
   - GameApp.java
   - Job.java
