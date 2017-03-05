@@ -64,8 +64,6 @@ public class GameApp{
 			System.out.print("Invalid command line input. Goodbye.");
 		}//closes catch
 
-		//TODO: Take input from command line, process it and add error checking
-		//TODO: Call the start() method to start playing the game
 	}//closes main
 
 	/**
