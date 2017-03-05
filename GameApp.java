@@ -78,19 +78,28 @@ public class GameApp{
 			game.createJobs();
 			game.displayActiveJobs();
 			int jobIndex = getIntegerInput("Select a job to work on: ");
+			while (jobIndex < 0 || jobIndex >= game.getNumberOfJobs()) {
+				jobIndex = getIntegerInput("Invalid position. Select a job to work on: ");
+			}
+			System.out.println(jobIndex);
+			
 			int workTime = getIntegerInput("For how long would you like to work on "
 					+ "this job?: ");
-			//game.setTimeToPlay(game.getTimeToPlay() - jobIndex);
+			while (workTime < 0) {
+				workTime = getIntegerInput("Please enter a non-negative duration "
+						+ "of time to work on this job: ");
+			}
+			System.out.println(workTime);
 
 			Job currJob = game.updateJob(jobIndex, workTime);
 			if (!currJob.isCompleted()) {
 				int returnIndex = getIntegerInput("At what position would you like "
 						+ "to insert the job back into the list?\n");
+				System.out.println(returnIndex);
 				if (returnIndex < 0 || returnIndex > game.getNumberOfJobs()) {
 					returnIndex = game.getNumberOfJobs();
-				}//closes if (returnIndex < 0 || returnIndex > game.getNumberOfJobs()) 
+				}//closes if (returnIndex < 0 || returnIndex >= game.getNumberOfJobs()) 
 				game.addJob(returnIndex, currJob);
-				game.setTimeToPlay(game.getTimeToPlay() - returnIndex);
 			}//closes if (!currJob.isCompleted())
 			else {
 				System.out.println("Job completed! Current Score: " + game.getTotalScore());
@@ -99,7 +108,7 @@ public class GameApp{
 			}//closes else statement
 		}//closes while loop
 		System.out.println("Game Over!\nYour final score: " + game.getTotalScore());
-		
+
 
 	}//closes start()
 

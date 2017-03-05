@@ -19,112 +19,112 @@
  *
  */
 public class Job{
-    /** Member variables of the job class
-     */
-    private String jobName;
-    private int steps;
-    private int points;
-    private int timeUnits;
+	/** Member variables of the job class
+	 */
+	private String jobName;
+	private int steps;
+	private int points;
+	private int timeUnits;
 
-    /**
-     * Constructor for instantiating a job
-     * @param jobName :Is of the format J0, J1... and is assigned automatically
-     * by the job simulator.
-     * @param points :percentage of job completed in the game at a given point
-     * of time.
-     * @param timeUnits :Total timeunits required to complete the job
-     */
-    public Job(String jobName, int points, int timeUnits) {
-        this.jobName = jobName;
-        this.points = points;
-        this.timeUnits = timeUnits;
-    }
+	/**
+	 * Constructor for instantiating a job
+	 * @param jobName :Is of the format J0, J1... and is assigned automatically
+	 * by the job simulator.
+	 * @param points :percentage of job completed in the game at a given point
+	 * of time.
+	 * @param timeUnits :Total timeunits required to complete the job
+	 */
+	public Job(String jobName, int points, int timeUnits) {
+		this.jobName = jobName;
+		this.points = points;
+		this.timeUnits = timeUnits;
+	}
 
-    /**
-     * Function to validate if a job has been completed
-     * @return: true if job has been completed
-     *          false otherwise
-     */
-    public boolean isCompleted() {
-        return timeUnits <= steps;
-    }
+	/**
+	 * Function to validate if a job has been completed
+	 * @return: true if job has been completed
+	 *          false otherwise
+	 */
+	public boolean isCompleted() {
+		return timeUnits <= steps;
+	}
 
-    /**
-     * Getter for jobName
-     * @return: jobName
-     */
+	/**
+	 * Getter for jobName
+	 * @return: jobName
+	 */
 
-    public String getJobName() {
-        return jobName;
-    }
+	public String getJobName() {
+		return jobName;
+	}
 
-    /**
-     * Setter for jobName. Used only by the simulator
-     * @param jobName: jobname for a given job
-     */
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
-    }
+	/**
+	 * Setter for jobName. Used only by the simulator
+	 * @param jobName: jobname for a given job
+	 */
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
 
-    /**
-     * getter for steps completed in the given job
-     * @return : steps
-     */
+	/**
+	 * getter for steps completed in the given job
+	 * @return : steps
+	 */
 
-    public int getSteps() {
-        return steps;
-    }
+	public int getSteps() {
+		return steps;
+	}
 
-    /**
-     * Setter for steps completed in the given job
-     * @param steps: percentage of job completed
-     */
+	/**
+	 * Setter for steps completed in the given job
+	 * @param steps: percentage of job completed
+	 */
 
-    public void setSteps(int steps) {
-        this.steps = steps;
-    }
+	public void setSteps(int steps) {
+		this.steps = steps;
+	}
 
-    /**
-     * getter for number of points associated with a given job
-     * @return: points
-     */
+	/**
+	 * getter for number of points associated with a given job
+	 * @return: points
+	 */
 
-    public int getPoints() {
-        return points;
-    }
+	public int getPoints() {
+		return points;
+	}
 
-    /**
-     * Setter for the points associated with a given job
-     * @param points: set the points for a job
-     */
+	/**
+	 * Setter for the points associated with a given job
+	 * @param points: set the points for a job
+	 */
 
-    public void setPoints(int points) {
-        this.points = points;
-    }
+	public void setPoints(int points) {
+		this.points = points;
+	}
 
-    /**
-     * Getter for the total time required to complete the job
-     * @return : timeUnits
-     */
+	/**
+	 * Getter for the total time required to complete the job
+	 * @return : timeUnits
+	 */
 
-    public int getTimeUnits() {
-        return timeUnits;
-    }
+	public int getTimeUnits() {
+		return timeUnits;
+	}
 
-    /**
-     * Setter for the timeUnits required to complete a job
-     * @param timeUnits
-     */
+	/**
+	 * Setter for the timeUnits required to complete a job
+	 * @param timeUnits
+	 */
 
-    public void setTimeUnits(int timeUnits) {
-        this.timeUnits = timeUnits;
-    }
+	public void setTimeUnits(int timeUnits) {
+		this.timeUnits = timeUnits;
+	}
 
-    /**
-     * Converts the job instance into a format which can be displayed.
-     * @return: String format for job
-     */
-    public String toString(){
-        return "Job Name: " + jobName + " Job Points: " + points + " Steps Remaining: "+ (this.timeUnits - this.steps);
-    }
+	/**
+	 * Converts the job instance into a format which can be displayed.
+	 * @return: String format for job
+	 */
+	public String toString(){
+		return "Job Name: " + jobName + " Job Points: " + points + " Steps Remaining: "+ (this.timeUnits - this.steps);
+	}
 }

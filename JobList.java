@@ -27,27 +27,30 @@ public class JobList implements ListADT<Job> {
 	private Listnode<Job> head;
 	//number of items within the Listnode
 	private int numItems;
+	
 	/*This constructor sets the head reference to null and numItems
-	*to 0.
-	*/
+	 *to 0.
+	 */
 	public JobList() {
 		head = new Listnode<Job>(null);
 		numItems = 0;
 	}//closes JobList conostructor
+	
 	/*This method establishes a new iterator of jobs with a head
-	*reference and numItems.
-	*@return new JobListIterator(head, numItems)
-	*	an iterator that starts at the head reference to numItems
-	*/
+	 *reference and numItems.
+	 *@return new JobListIterator(head, numItems)
+	 *	an iterator that starts at the head reference to numItems
+	 */
 	public Iterator<Job> iterator() {
 		return new JobListIterator(head, numItems);
 	}//closes iterator()
+	
 	/*This method adds Job item to the end of list.
-	*@param Job item
-	*	an item that is to be added at the end of the listnode
-	*@throws IllegalArgumentException()
-	*	if item is null
-	*/
+	 *@param Job item
+	 *	an item that is to be added at the end of the listnode
+	 *@throws IllegalArgumentException()
+	 *	if item is null
+	 */
 	public void add(Job item) {
 		try {
 			if(item == null) throw new IllegalArgumentException();
@@ -64,18 +67,19 @@ public class JobList implements ListADT<Job> {
 		curr.setNext(new Listnode<Job>(item));
 		//updates numItems
 		numItems++;
-		
+
 	} //closes add(item)
+	
 	/*This method adds Job item to a chosen position
-	*@param int pos
-	* 	position that the item will be added to Listnode
-	*@throws IndexOutOfBoundsException()
-	*	if the pos is greater than numItems or less than 0
-	*@throws IllegalArgumentException()
-	*	if item is null
-	*@param Job item
-	*	an item that is to be added to Listnode
-	*/
+	 *@param int pos
+	 * 	position that the item will be added to Listnode
+	 *@throws IndexOutOfBoundsException()
+	 *	if the pos is greater than numItems or less than 0
+	 *@throws IllegalArgumentException()
+	 *	if item is null
+	 *@param Job item
+	 *	an item that is to be added to Listnode
+	 */
 	public void add(int pos, Job item) {
 		try {
 			if(pos < 0 || pos > numItems){
@@ -90,7 +94,7 @@ public class JobList implements ListADT<Job> {
 		Listnode<Job> curr = head;
 		Listnode<Job> newJob = new Listnode<Job>(item);
 		//traverses through list until position is reached
-		for(int i = 0; i < pos - 1; ++i) {
+		for(int i = 0; i < pos; ++i) {
 			curr = curr.getNext();
 		}//ends for loop
 		//sets the new job into list
@@ -99,12 +103,13 @@ public class JobList implements ListADT<Job> {
 		//updates numItems
 		numItems++;
 	}//closes add(pos, items)
+	
 	/*This method returns true iff the item is already in the Listnode
-	*@param Job item
-	*	an item that is being compared to items in Listnode
-	*@return true
-	*	iff the item is already in the listnode
-	*/
+	 *@param Job item
+	 *	an item that is being compared to items in Listnode
+	 *@return true
+	 *	iff the item is already in the listnode
+	 */
 	public boolean contains(Job item) {
 		Listnode<Job> curr = head;
 		//traverses through list to find a match
@@ -116,14 +121,15 @@ public class JobList implements ListADT<Job> {
 		}//closes for loop
 		return false;
 	}//closes contains(item)
+	
 	/*This accessor method returns a Job item at a given position
-	*@param int pos
-	*	position index value used to retrieve information
-	*@throws IndexOutOfBoundsException()
-	*	if the pos is greater than numItems or less than 0
-	*@return curr.getData()
-	*	data in Listnode at a certain position
-	*/
+	 *@param int pos
+	 *	position index value used to retrieve information
+	 *@throws IndexOutOfBoundsException()
+	 *	if the pos is greater than numItems or less than 0
+	 *@return curr.getData()
+	 *	data in Listnode at a certain position
+	 */
 	public Job get(int pos) {
 		try {
 			if(pos < 0 || pos > numItems){
@@ -139,24 +145,26 @@ public class JobList implements ListADT<Job> {
 		}//closes for loop
 		return curr.getData();
 	} //closes get(pos)
+	
 	/*This method checks to see if the listNode is null
-	*@return true
-	*	iff the Listnode is empty
-	*/
+	 *@return true
+	 *	iff the Listnode is empty
+	 */
 	public boolean isEmpty() {
 		if (head.getNext() != null) {
-		return false;
+			return false;
 		}//closes if statement
 		return true;
 	}//closes isEmpty()
+	
 	/*This method removes a Job item from a position in the Listnode
-	*@param int pos
-	*	index position in 
-	*@throws IndexOutOfBoundsException()
-	*	if the pos is greater than numItems or less than 0
-	*@return oldJob
-	*	the data that is beng removed
-	*/
+	 *@param int pos
+	 *	index position in 
+	 *@throws IndexOutOfBoundsException()
+	 *	if the pos is greater than numItems or less than 0
+	 *@return oldJob
+	 *	the data that is beng removed
+	 */
 	public Job remove(int pos) {
 		try {
 			if(pos < 0 || pos > numItems){
@@ -177,10 +185,11 @@ public class JobList implements ListADT<Job> {
 		numItems--;
 		return oldJob;
 	}//closes remove(pos)
+	
 	/*This method simply returns numItems.
-	*@return numItems
-	*	number of items in Listnode
-	*/
+	 *@return numItems
+	 *	number of items in Listnode
+	 */
 	public int size() {
 		return numItems;
 	}//closes size()

@@ -32,6 +32,7 @@ public class Scoreboard implements ScoreboardADT {
 	public Scoreboard() {
 		scores = new JobList();
 	} //closes constructor
+	
 	/**
 	 * This class iterates through scores and adds the points to 
 	 * int total.  It calls iterator(), hasNext() withing the Iterator
@@ -39,27 +40,28 @@ public class Scoreboard implements ScoreboardADT {
 	 * 
 	 * @return total
 	 *	total number of points in scores
- 	 */
+	 */
 	public int getTotalScore() {
 		//total number of points in the JobList
 		int total = 0; 
 		//allows scores to be iterated through
 		Iterator<Job> itr = scores.iterator();
 		/*while there is still content, iterate through and concatenate
-		* the total points.
-		*/
+		 * the total points.
+		 */
 		while (itr.hasNext()) {
 			total += itr.next().getPoints();
 		} //ends while
 		return total;
 	} //closes getTotalScore()
+	
 	/**
 	 * This class updates ScoreBoard by adding the job to scores.
-	*@throws IllegalArgumentException()
-	*	if the job is null
+	 *@throws IllegalArgumentException()
+	 *	if the job is null
 	 * @param job
 	 *	object to be added to the JobList scores
- 	 */
+	 */
 	public void updateScoreBoard(Job job) {
 		try {
 			if (job == null) {
@@ -67,13 +69,14 @@ public class Scoreboard implements ScoreboardADT {
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.print("Cannot update a null job.");
+		}
 		scores.add(job);
 	} //closes updateScoreBoard
+	
 	/**
 	 * This class prints out a message containing the ScoreBoard's
 	 * contents.
-	 *	
- 	 */
+	 */
 	public void displayScoreBoard() {
 		System.out.println("The jobs completed:");
 		//allows the scores to be iterated through
@@ -85,7 +88,7 @@ public class Scoreboard implements ScoreboardADT {
 					"Points earned for this job: " + currJob.getPoints() + "\n" +
 					"--------------------------------------------");
 		}//closes while loop
-		
+
 	}//closes displayScoreBoard
 
 }//closes ScoreBoard class

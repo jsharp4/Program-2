@@ -20,52 +20,52 @@
  */
 public interface ListADT<E> extends Iterable<E>{
 
-    /** Allows a class to add an item at the end of the list
-     * @param item
-     *              an item to add to the list
-     */
+	/** Allows a class to add an item at the end of the list
+	 * @param item
+	 *              an item to add to the list
+	 */
 
-    void add(E item);
+	void add(E item);
 
-    /** Allows a class to add an item at any position in the list
-     * @param item
-     *              an item to be added to the list
-     * @param pos
-     *              position at which the item must be added. Indexing starts from 0
-     */
+	/** Allows a class to add an item at any position in the list
+	 * @param item
+	 *              an item to be added to the list
+	 * @param pos
+	 *              position at which the item must be added. Indexing starts from 0
+	 */
 
-    void add(int pos, E item);
+	void add(int pos, E item);
 
-    /** Allows a class to check if a particular item exists in the list
-     * @param item
-     *              the item to be checked for in the list
-     */
+	/** Allows a class to check if a particular item exists in the list
+	 * @param item
+	 *              the item to be checked for in the list
+	 */
 
-    boolean contains(E item);
+	boolean contains(E item);
 
-    /** Allows a class to return the item at a particular position
-     * @param E
-     *            item to be returned at a given position
-     */
+	/** Allows a class to return the item at a particular position
+	 * @param E
+	 *            item to be returned at a given position
+	 */
 
-    E get(int pos);
+	E get(int pos);
 
-    /** Allows a class to return true if the list is empty
-      */
+	/** Allows a class to return true if the list is empty
+	 */
 
-    boolean isEmpty();
+	boolean isEmpty();
 
-    /** Allows a class to remove the item at the given positions
-     * @param pos
-     *          the position of the item to be deleted from the list
-     */
+	/** Allows a class to remove the item at the given positions
+	 * @param pos
+	 *          the position of the item to be deleted from the list
+	 */
 
-    E remove(int pos);
+	E remove(int pos);
 
-    /** Allows a class to return the size of the singly linked list
-     */
+	/** Allows a class to return the size of the singly linked list
+	 */
 
-    int size();
+	int size();
 
 
 }//closes ListADT

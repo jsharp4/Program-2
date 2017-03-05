@@ -28,13 +28,14 @@ public class JobListIterator implements Iterator<Job> {
 	private int numItems;
 	//pointer for the position within the list
 	private int position;
+	
 	/*This constructor assigns the parameters items and numItems to
-	*their corresponding variables and marks position as 0.
-	*@param Listnode<Job> items
-	*	Job items stored a Listnode
-	*@param int numItems
-	*	number of items in a Listnode
-	*/
+	 *their corresponding variables and marks position as 0.
+	 *@param Listnode<Job> items
+	 *	Job items stored a Listnode
+	 *@param int numItems
+	 *	number of items in a Listnode
+	 */
 	public JobListIterator(Listnode<Job> items, int numItems) {
 		try {
 			if (items == null) {
@@ -47,37 +48,40 @@ public class JobListIterator implements Iterator<Job> {
 		this.numItems = numItems;
 		position = 0;
 	} //closes constructor
+	
 	/*This method checks to see if there are more items in the listNode
-	*@return true
-	*	iff the position is less than numItems
-	*/
+	 *@return true
+	 *	iff the position is less than numItems
+	 */
 	public boolean hasNext() {
 		return position < numItems;
 	} //closes hasNext()
+	
 	/*This method returns the data at a particular location and
-	*increments the position. 
-	* @throws NoSuchElementException()
-	*	If there is not a next value, the exception is thrown
-	*@return items.getData()
-	*	returns the data at a particular position
-	*/
+	 *increments the position. 
+	 * @throws NoSuchElementException()
+	 *	If there is not a next value, the exception is thrown
+	 *@return items.getData()
+	 *	returns the data at a particular position
+	 */
 	public Job next() {
 		try {
-		if (!hasNext()) {
-			throw new NoSuchElementException();
+			if (!hasNext()) {
+				throw new NoSuchElementException();
+			}
+		} catch (NoSuchElementException e) {
+			System.out.print("Next element not found in job list");
 		}
 		items = items.getNext();
 		position++;
 		return items.getData();
-		} catch (NosuchElementException e) {
-			System.out.print("Next element not found in job list").
-		}
+
 	} //closes next()
-	
+
 	/*removes the Job at the current position in the list. However, it is not
-	*supported by JobListIterator, and will throw an UnsupportedOperationException
-	*if thrown.
-	*/
+	 *supported by JobListIterator, and will throw an UnsupportedOperationException
+	 *if thrown.
+	 */
 	public void remove() {
 		try {
 			throw new UnsupportedOperationException();
