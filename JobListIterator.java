@@ -55,12 +55,16 @@ public class JobListIterator implements Iterator<Job> {
 	*	returns the data at a particular position
 	*/
 	public Job next() {
+		try {
 		if (!hasNext()) {
 			throw new NoSuchElementException();
 		}
 		items = items.getNext();
 		position++;
 		return items.getData();
+		} catch (NosuchElementException e) {
+			System.out.print("Next element not found in job list").
+		}
 	} //closes next()
 	
 	public void remove() {
