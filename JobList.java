@@ -20,7 +20,7 @@ import java.util.Iterator;
  *
  * <p>Bugs: None that we are aware of
  *
- * @author Jon Sharp, Allison Quick, Lindsey Bohr, Michael Yang
+ * @author Jon Sharp, Allison Quick, Lindsey Bohr, Michael Yang, Kendra Raczek
  */
 public class JobList implements ListADT<Job> {
 	//head reference for the listnode
