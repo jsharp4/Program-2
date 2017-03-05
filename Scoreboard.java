@@ -23,7 +23,7 @@ import java.util.LinkedList;
  *
  * <p>Bugs: None that we are aware of
  *
- * @author Jon Sharp, Allison Quick, Lindsey Bohr, Michael Yang
+ * @author Jon Sharp, Allison Quick, Lindsey Bohr, Michael Yang, Kendra Raczek
  */
 public class Scoreboard implements ScoreboardADT {
 	//Linked list of jobs
