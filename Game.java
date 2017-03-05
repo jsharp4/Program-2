@@ -16,8 +16,9 @@
 import java.util.Iterator;
 /**
  * This class is called by GameApp, creating jobs and ScoreBoard instances.
- *Contains the methods: getTimeToPlay, isOver, createJobs, getNumberOfJobs,
- * addJob, updateJob, displayActiveJobs, displayCompletedJobs, and getTotalScore.
+ * Contains the methods: getTimeToPlay, isOver, createJobs, getNumberOfJobs,
+ * addJob, updateJob, displayActiveJobs, displayCompletedJobs, 
+ * and getTotalScore.
  *
  * <p>Bugs: none that we are aware of
  *
@@ -37,7 +38,8 @@ public class Game{
 	/**
 	 * Constructor. Initializes all variables.
 	 * @param seed
-	 * 		seed used to seed the random number generator in the Jobsimulator class.
+	 * 		seed used to seed the random number generator in 
+	 *		the Jobsimulator class.
 	 * @param timeToPlay
 	 * 		duration used to determine the length of the game.
 	 */
@@ -49,7 +51,8 @@ public class Game{
 	}//closes constructor
 
 	/**
-	 * Accessor method that returns the amount of time currently left in the game.
+	 * Accessor method that returns the amount of time currently 
+	 *		left in the game.
 	 * @returns timeToPlay
 	 *		the amount of time left in the game.
 	 */
@@ -58,7 +61,8 @@ public class Game{
 	}//closes getTimeToPlay()
 
 	/**
-	 * Mutator method that sets the amount of time that the game is to be executed for.
+	 * Mutator method that sets the amount of time that 
+	 *		the game is to be executed for.
 	 * Can be used to update the amount of time remaining.
 	 * @param timeToPlay
 	 *        the remaining duration of the game
@@ -70,7 +74,8 @@ public class Game{
 	/**
 	 * States whether or not the game is over yet.
 	 * @returns true 
-	 *		iff the amount of time remaining in the game is less than or equal to 0
+	 *		iff the amount of time remaining 
+	 *		in the game is less than or equal to 0
 	 */
 	public boolean isOver(){
 		return timeToPlay <= 0;
@@ -168,24 +173,28 @@ public class Game{
 		Iterator<Job> itr = list.iterator();
 		int position = 0;
 		System.out.println("Job Listing");
-		//while the Listnode has a next node, print the positions and jobs
+		//while the Listnode has a next node, 
+		//print the positions and jobs
 		while (itr.hasNext()) {
 			Job currJob = itr.next();
-			System.out.println("At position " + position + " " + currJob);
+			System.out.println("At position " + position + " " 
+					   + currJob);
 			position++;
 		}//close while loop
 
 	}//closes displayActiveJobs()
 
 	/**
-	 * This function simply invokes the displayScoreBoard method in the ScoreBoard class.
+	 * This function simply invokes the displayScoreBoard 
+	 *		method in the ScoreBoard class.
 	 */
 	public void displayCompletedJobs(){
 		scoreBoard.displayScoreBoard();
 	}//closes displayCompletedJobs()
 
 	/**
-	 * This function simply invokes the getTotalScore method of the ScoreBoard class.
+	 * This function simply invokes the getTotalScore method of 
+	 * the ScoreBoard class.
 	 * @return scoreBoard.getTotalScore()
 	 *		the value calculated by getTotalScore
 	 */
