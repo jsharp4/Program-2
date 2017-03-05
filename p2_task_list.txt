@@ -130,7 +130,12 @@ Task List Usage:
 
 
 - Task 11: Add Exception-checking code to each class
-  -
+  - Game.java
+  - GameApp.java
+  - Job.java
+  - JobList.java
+  - JobListIterator.java
+  
   
 - ADD MORE SUB-TASKS TO ANY OF THE ABOVE TASKS
 
