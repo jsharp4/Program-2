@@ -15,11 +15,12 @@
 
 import java.util.Iterator;
 import java.util.LinkedList;
+
 /**
  * This class implements ScorebordADT and contains methods: getTotalScore(),
  * updateScoreBoard(Job job), displayScoreBoard().  It imports Iterator and
- *LinkedList.  This class stores a job into the JobList and prints out the 
- *Scoreboard's contents.  It iterates to get a total score.
+ * LinkedList.  This class stores a job into the JobList and prints out the 
+ * Scoreboard's contents.  It iterates to get a total score.
  *
  * <p>Bugs: None that we are aware of
  *
@@ -46,8 +47,8 @@ public class Scoreboard implements ScoreboardADT {
 		int total = 0; 
 		//allows scores to be iterated through
 		Iterator<Job> itr = scores.iterator();
-		/*while there is still content, iterate through and concatenate
-		 * the total points.
+		/*while there is still content, iterate through and 
+		 * concatenate the total points.
 		 */
 		while (itr.hasNext()) {
 			total += itr.next().getPoints();
@@ -57,10 +58,12 @@ public class Scoreboard implements ScoreboardADT {
 	
 	/**
 	 * This class updates ScoreBoard by adding the job to scores.
-	 *@throws IllegalArgumentException()
-	 *	if the job is null
+	 *
 	 * @param job
 	 *	object to be added to the JobList scores
+	 *
+	 * @throws IllegalArgumentException()
+	 *	if the job is null
 	 */
 	public void updateScoreBoard(Job job) {
 		try {
@@ -71,7 +74,7 @@ public class Scoreboard implements ScoreboardADT {
 			System.out.print("Cannot update a null job.");
 		}
 		scores.add(job);
-	} //closes updateScoreBoard
+	} //closes updateScoreBoard(Job job)
 	
 	/**
 	 * This class prints out a message containing the ScoreBoard's
@@ -84,11 +87,12 @@ public class Scoreboard implements ScoreboardADT {
 		//iterate through list and print out the job name and points.
 		while (itr.hasNext()) {
 			Job currJob = itr.next();
-			System.out.println("Job Name: " + currJob.getJobName() + "\n" +
-					"Points earned for this job: " + currJob.getPoints() + "\n" +
-					"--------------------------------------------");
-		}//closes while loop
+			System.out.println("Job Name: " + currJob.getJobName() 
+					   + "\n" + "Points earned for this" 
+					   + " job: " + currJob.getPoints() 
+					   + "\n" + "----------------------"
+					   + "----------------------");
+		} //closes while loop
+	} //closes displayScoreBoard()
 
-	}//closes displayScoreBoard
-
-}//closes ScoreBoard class
+} //closes ScoreBoard class
