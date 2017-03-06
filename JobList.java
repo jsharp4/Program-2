@@ -49,7 +49,7 @@ public class JobList implements ListADT<Job> {
 	 * @param Job item
 	 *	an item that is to be added at the end of the listnode
 	 * @throws IllegalArgumentException()
-	 *	if item is null
+	 *	if item is null, exception is thrown
 	 */
 	public void add(Job item) {
 		try {
@@ -69,7 +69,6 @@ public class JobList implements ListADT<Job> {
 		curr.setNext(new Listnode<Job>(item));
 		//updates numItems
 		numItems++;
-
 	} //closes add(item)
 	
 	/* This method adds Job item to a chosen position
