@@ -53,7 +53,8 @@ public class JobList implements ListADT<Job> {
 	 */
 	public void add(Job item) {
 		try {
-			if(item == null) throw new IllegalArgumentException();
+			if(item == null) 
+				throw new IllegalArgumentException();
 		} catch (IllegalArgumentException e) {
 			System.out.println("Illegal Argument");
 		}
@@ -63,7 +64,8 @@ public class JobList implements ListADT<Job> {
 		while (curr.getNext() != null) {
 			curr = curr.getNext();
 		} //closes while loop
-		//sets the next node to the new item (adds item to end of listnode)
+		//sets the next node to the new item 
+		//(adds item to end of listnode)
 		curr.setNext(new Listnode<Job>(item));
 		//updates numItems
 		numItems++;
@@ -85,7 +87,8 @@ public class JobList implements ListADT<Job> {
 			if(pos < 0 || pos > numItems){
 				throw new IndexOutOfBoundsException();
 			}//closes if statement
-			if(item == null) throw new IllegalArgumentException();
+			if(item == null) 
+				throw new IllegalArgumentException();
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("Index Out Of Bounds");
 		} catch (IllegalArgumentException f) {
@@ -104,7 +107,8 @@ public class JobList implements ListADT<Job> {
 		numItems++;
 	}//closes add(pos, items)
 	
-	/*This method returns true iff the item is already in the Listnode
+	/*This method returns true iff the item is 
+	 *already in the Listnode
 	 *@param Job item
 	 *	an item that is being compared to items in Listnode
 	 *@return true
@@ -157,7 +161,8 @@ public class JobList implements ListADT<Job> {
 		return true;
 	}//closes isEmpty()
 	
-	/*This method removes a Job item from a position in the Listnode
+	/*This method removes a Job item from 
+	 *a position in the Listnode
 	 *@param int pos
 	 *	index position in 
 	 *@throws IndexOutOfBoundsException()
