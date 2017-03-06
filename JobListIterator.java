@@ -97,4 +97,4 @@ public class JobListIterator implements Iterator<Job> {
 		}
 	} //closes remove()
 
-}//closes JobListIterator
+} //closes JobListIterator class
