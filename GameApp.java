@@ -17,8 +17,8 @@ import java.util.Scanner;
 
 /**
  * This class sets up the Game App.  Imports Scanner. This is the main class
- *that calls other methods to perform the game. Includes methods: main, start,
- *and getIntegerInput.
+ * that calls other methods to perform the game. Includes methods: main, start,
+ * and getIntegerInput.
  * <p>Bugs: None that we are aware of
  *
  * @author Jon Sharp, Michael Yang, Lindsey Bohr, Allison Quick, Kendra Raczek
@@ -47,7 +47,8 @@ public class GameApp{
 	 * Use the getIntegerInput function to read inputs from console
 	 * @throws NumberFormatException
 	 *	when the seed or timeToPlay is 0 or negative
-	 * @param args: Command line arguments <seed> <timeToPlay>
+	 * @param args
+	 *	Command line arguments <seed> <timeToPlay>
 	 */
 	public static void main(String[] args){
 
@@ -91,7 +92,7 @@ public class GameApp{
 			} //close while loop
 			System.out.println(jobIndex);
 			
-			int workTime = getIntegerInput("For how long would 
+			int workTime = getIntegerInput("For how long would " 
 					   + "you like to work on this job?: ");
 			while (workTime < 0) {
 				workTime = getIntegerInput("Please enter a" 
