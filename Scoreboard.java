@@ -36,7 +36,7 @@ public class Scoreboard implements ScoreboardADT {
 	
 	/**
 	 * This class iterates through scores and adds the points to 
-	 * int total.  It calls iterator(), hasNext() withing the Iterator
+	 * int total.  It calls iterator(), hasNext() within the Iterator
 	 * and getPoints().
 	 * @return total
 	 *	total number of points in scores
