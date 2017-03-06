@@ -14,6 +14,7 @@
 //////////////////////////// 80 columns wide //////////////////////////////////
 
 import java.util.Scanner;
+
 /**
  * This class sets up the Game App.  Imports Scanner. This is the main class
  *that calls other methods to perform the game. Includes methods: main, start,
@@ -40,8 +41,8 @@ public class GameApp{
 	}//closes constructor
 
 	/**
-	 * Main function which takes the command line arguments and instantiate 
-	 *the GameApp class.
+	 * Main function which takes the command line arguments and 
+	 * instantiate the GameApp class.
 	 * The main function terminates when the game ends.
 	 * Use the getIntegerInput function to read inputs from console
 	 * @throws NumberFormatException
@@ -64,9 +65,9 @@ public class GameApp{
 		} catch (NumberFormatException e) {
 			System.out.
 				print("Invalid command line input. Goodbye.");
-		}//closes catch
+		} //closes catch
 
-	}//closes main
+	} //closes main(String[] args)
 
 	/**
 	 * This method is called by main to start the game and runs until the 
@@ -80,43 +81,48 @@ public class GameApp{
 					   + " left in the game!");
 			game.createJobs();
 			game.displayActiveJobs();
-			int jobIndex = getIntegerInput("Select a job to work on: ");
-			while (jobIndex < 0 || jobIndex >= game.getNumberOfJobs()) {
+			int jobIndex = 
+				getIntegerInput("Select a job to work on: ");
+			while (jobIndex < 0 || jobIndex 
+			       >= game.getNumberOfJobs()) {
 				jobIndex = getIntegerInput
-					("Invalid position. Select a job to work on: ");
-			}
+					("Invalid position. "
+					 + "Select a job to work on: ");
+			} //close while loop
 			System.out.println(jobIndex);
 			
-			int workTime = getIntegerInput("For how long would you like to work on "
-					+ "this job?: ");
+			int workTime = getIntegerInput("For how long would 
+					   + "you like to work on this job?: ");
 			while (workTime < 0) {
-				workTime = getIntegerInput("Please enter a non-negative duration "
-						+ "of time to work on this job: ");
-			}
+				workTime = getIntegerInput("Please enter a" 
+					 + " non-negative duration of time to" 
+					 + " work on this job: ");
+			} //close while loop
 			System.out.println(workTime);
 
 			Job currJob = game.updateJob(jobIndex, workTime);
 			if (!currJob.isCompleted()) {
-				int returnIndex = getIntegerInput("At what position would you like "
-						+ "to insert the job back into the list?\n");
+				int returnIndex = getIntegerInput("At what position"
+						+ " would you like to insert the job"
+						+ " back into the list?\n");
 				System.out.println(returnIndex);
-				if (returnIndex < 0 || returnIndex > game.getNumberOfJobs()) {
+				if (returnIndex < 0 || returnIndex 
+				    		> game.getNumberOfJobs()) {
 					returnIndex = game.getNumberOfJobs();
-				}//closes if (returnIndex < 0 || returnIndex 
-						//>= game.getNumberOfJobs()) 
+				} //closes inner if statement 
 				game.addJob(returnIndex, currJob);
-			}//closes if (!currJob.isCompleted())
+			} //closes outer if statement
 			else {
 				System.out.println("Job completed! Current Score: " 
 						   + game.getTotalScore());
-				System.out.println("Total score: " + game.getTotalScore());
+				System.out.println("Total score: " 
+						   + game.getTotalScore());
 				game.displayCompletedJobs();
-			}//closes else statement
-		}//closes while loop
-		System.out.println("Game Over!\nYour final score: " + game.getTotalScore());
-
-
-	}//closes start()
+			} //closes else statement
+		} //closes while loop
+		System.out.println("Game Over!\nYour final score: " 
+				   + game.getTotalScore());
+	} //closes start()
 
 	/**
 	 * Displays the prompt and returns the integer entered by the user
@@ -124,8 +130,9 @@ public class GameApp{
 	 *
 	 * Does not return until the user enters an integer.
 	 * Does not check the integer value in any way.
-	 * @param prompt The user prompt to display before waiting for this integer.
-	 *@return STDIN.nextInt()
+	 * @param prompt 
+	 * 	The user prompt to display before waiting for this integer.
+	 * @return STDIN.nextInt()
 	 *	the next integer that is entered
 	 */
 	public static int getIntegerInput(String prompt) {
@@ -133,7 +140,8 @@ public class GameApp{
 		while ( ! STDIN.hasNextInt() ) {
 			System.out.print(STDIN.next()+ " is not an int. " 
 					 + "Please enter an integer.");
-		}//closes while loop
+		} //closes while loop
 		return STDIN.nextInt();
-	}//closes getIntegerInput(prompt)
-}//closes GameApp
+	} //closes getIntegerInput(prompt)
+	
+} //closes GameApp
