@@ -26,13 +26,13 @@ import java.util.Iterator;
  * @author Jon Sharp, Lindsey Bohr, Allison Quick, Michael Yang, Kendra Raczek
  */
 public class Game{
-	// A list of all jobs currently in the queue.
+	//a list of all jobs currently in the queue.
 	private ListADT<Job> list;
-	// Whenever a Job is completed it is added to the scoreboard
+	//whenever a Job is completed it is added to the scoreboard
 	private ScoreboardADT scoreBoard;
-	// marker for amount of time left to play game
+	//marker for amount of time left to play game
 	private int timeToPlay;
-	// declares a JobSimulator object
+	//declares a JobSimulator object
 	private JobSimulator jobSimulator;
 
 	/**
