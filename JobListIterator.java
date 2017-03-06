@@ -32,10 +32,13 @@ public class JobListIterator implements Iterator<Job> {
 	
 	/* This constructor assigns the parameters items and numItems to
 	 * their corresponding variables and marks position as 0.
+	 *
 	 * @param Listnode<Job> items
 	 *	Job items stored a Listnode
 	 * @param int numItems
 	 *	number of items in a Listnode
+	 * @throws IllegalArgumentException()
+	 *	If there are no values under items, the exception is thrown
 	 */
 	public JobListIterator(Listnode<Job> items, int numItems) {
 		try {
@@ -78,12 +81,12 @@ public class JobListIterator implements Iterator<Job> {
 		items = items.getNext();
 		position++;
 		return items.getData();
-
 	} //closes next()
 
 	/* This method removes the Job at the current position in the list.
-	 * However, it is not supported by JobListIterator, and will 
-	 * throw an UnsupportedOperationException if called.
+	 * @throws UnsupportedOperationException()
+	 *	This method is not supported by JobListIterator, and will
+	 *	throw exception if method is called
 	 */
 	public void remove() {
 		try {
