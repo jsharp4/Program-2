@@ -113,9 +113,9 @@ Task List Usage:
   
 + Task 9: Implement the GameApp class incrementally.  
   Compile and run after each of these items
-  + main: get the command line arguments (use the getIntegerInput method)
-  + Add the Welcome message as output
-  + main: construct a Game instance with the command line values
+  +J main: get the command line arguments (use the getIntegerInput method)
+  +J Add the Welcome message as output
+  +J main: construct a Game instance with the command line values
     - Try calling Game methods to see if Game was constructed
       and initialized correctly.
       
@@ -127,9 +127,9 @@ Task List Usage:
   +J output the job list
 
 + Task 11: Add Exception-checking code to each class
-  +K GameApp.java
-  +AKJ JobList.java
-  +K JobListIterator.java
+  +KM GameApp.java
+  +AKJM JobList.java
+  +KM JobListIterator.java
   
  +ALM Task 12: Comment and Style all classes
   
