@@ -15,6 +15,7 @@
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
 /**
  * This class implements Iterator<Job> and establishes the 
  * methods hasNext() and next().  
@@ -41,8 +42,7 @@ public class JobListIterator implements Iterator<Job> {
 			if (items == null) {
 				throw new IllegalArgumentException();
 			}
-		} 
-		catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			System.out.print("Cannot create an iterator" 
 					 + " with a null list.");
 		}
@@ -71,8 +71,7 @@ public class JobListIterator implements Iterator<Job> {
 			if (!hasNext()) {
 				throw new NoSuchElementException();
 			}
-		} 
-		catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			System.out.print("Next element" 
 					 + " not found in job list");
 		}
@@ -89,8 +88,7 @@ public class JobListIterator implements Iterator<Job> {
 	public void remove() {
 		try {
 			throw new UnsupportedOperationException();
-		}
-		catch (UnsupportedOperationException e){
+		} catch (UnsupportedOperationException e){
 			System.out.print("JobListIterator does not support"
 					 + " the remove() method.");
 		}
