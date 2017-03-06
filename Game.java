@@ -14,6 +14,7 @@
 //////////////////////////// 80 columns wide //////////////////////////////////
 
 import java.util.Iterator;
+
 /**
  * This class is called by GameApp, creating jobs and ScoreBoard instances.
  * Contains the methods: getTimeToPlay, isOver, createJobs, getNumberOfJobs,
@@ -25,12 +26,11 @@ import java.util.Iterator;
  * @author Jon Sharp, Lindsey Bohr, Allison Quick, Michael Yang, Kendra Raczek
  */
 public class Game{
-
 	// A list of all jobs currently in the queue.
 	private ListADT<Job> list;
 	// Whenever a Job is completed it is added to the scoreboard
 	private ScoreboardADT scoreBoard;
-	//marker for amount of time left to play game
+	// marker for amount of time left to play game
 	private int timeToPlay;
 	// declares a JobSimulator object
 	private JobSimulator jobSimulator;
@@ -48,7 +48,7 @@ public class Game{
 		this.timeToPlay = timeToPlay;
 		jobSimulator = new JobSimulator(seed);
 		scoreBoard = new Scoreboard();
-	}//closes constructor
+	} //closes constructor
 
 	/**
 	 * Accessor method that returns the amount of time currently 
@@ -58,7 +58,7 @@ public class Game{
 	 */
 	public int getTimeToPlay() {
 		return timeToPlay;
-	}//closes getTimeToPlay()
+	} //closes getTimeToPlay()
 
 	/**
 	 * Mutator method that sets the amount of time that 
@@ -69,7 +69,7 @@ public class Game{
 	 */
 	public void setTimeToPlay(int timeToPlay) {
 		this.timeToPlay = timeToPlay;
-	}//closes setTimeToPlay(int timeToPlay)
+	} //closes setTimeToPlay(int timeToPlay)
 
 	/**
 	 * States whether or not the game is over yet.
@@ -79,14 +79,14 @@ public class Game{
 	 */
 	public boolean isOver(){
 		return timeToPlay <= 0;
-	}//closes isOver()
+	} //closes isOver()
 	/**
 	 * This method simply invokes the simulateJobs method
 	 * in the JobSimulator object.
 	 */
 	public void createJobs(){
 		jobSimulator.simulateJobs(list, timeToPlay);
-	}//closes createJobs()
+	} //closes createJobs()
 
 	/**
 	 *This accessor method obtains the number of jobs in the ListNode
@@ -95,7 +95,7 @@ public class Game{
 	 */
 	public int getNumberOfJobs(){
 		return list.size();
-	}//closes getNumberOfJobs()
+	} //closes getNumberOfJobs()
 
 	/**
 	 * Adds a job to a given position in the JobList.
@@ -110,7 +110,7 @@ public class Game{
 	public void addJob(int pos, Job item){
 		list.add(pos, item);
 		timeToPlay -= pos;
-	}//closes addJob(pos, item)
+	} //closes addJob(pos, item)
 
 	/**
 	 * Adds a job to the end end of the Listnode.
@@ -119,7 +119,7 @@ public class Game{
 	 */
 	public void addJob(Job item){
 		list.add(item);
-	}//closes addJob(item)
+	} //closes addJob(item)
 
 	/**
 	 * Given a valid index and duration,
@@ -128,38 +128,37 @@ public class Game{
 	 * This function should remove the job from the list and
 	 * return it after applying the duration.
 	 *
-	 * This function should set duration equal to the
-	 * amount of time remaining if duration exceeds it prior
-	 * to executing the job.
-	 * After executing the job for a given amount of time,
-	 * check if it is completed or not. If it is, then
-	 * it must be inserted into the scoreBoard.
-	 * This method should also calculate the time penalty involved in
-	 * executing the job and update the timeToPlay value accordingly
+	 * This function should set duration equal to the amount of time
+	 * remaining if duration exceeds it prior to executing the job.
+	 * After executing the job for a given amount of time, check if 
+	 * it is completed or not. If it is, then it must be inserted 
+	 * into the scoreBoard. This method should also calculate the 
+	 * time penalty involved in executing the job and update the
+	 * timeToPlay value accordingly.
 	 * @param index
 	 *      The job to be inserted in the list.
 	 * @param duration
 	 *      The amount of time the given job is to be worked on for.
-	 *@return updated
-	 *		the updated Job that is removed from the ListNode
+	 * @return updated
+	 *	The updated Job that is removed from the ListNode.
 	 */
 	public Job updateJob(int index, int duration){
 		Job updated = list.remove(index);
 		//set the timeToPlay to duration if it is less than duration
 		if (timeToPlay <= duration) {
 			duration = timeToPlay;
-		}//closes if statement
+		} //closes if statement
 
 		updated.setSteps(updated.getSteps() + duration);
 
 		if (updated.isCompleted()) {
 			scoreBoard.updateScoreBoard(updated);
-		}//closes if statement
+		} //closes if statement
 		//decrement timetoPlay by index and duration
 		timeToPlay -= index;
 		timeToPlay -= duration;
 		return updated;
-	}//closes updateJob(int index, int duration)
+	} //closes updateJob(int index, int duration)
 
 	/**
 	 * This method produces the output for the initial Job Listing, IE:
@@ -180,9 +179,9 @@ public class Game{
 			System.out.println("At position " + position + " " 
 					   + currJob);
 			position++;
-		}//close while loop
+		} //close while loop
 
-	}//closes displayActiveJobs()
+	} //closes displayActiveJobs()
 
 	/**
 	 * This function simply invokes the displayScoreBoard 
@@ -190,7 +189,7 @@ public class Game{
 	 */
 	public void displayCompletedJobs(){
 		scoreBoard.displayScoreBoard();
-	}//closes displayCompletedJobs()
+	} //closes displayCompletedJobs()
 
 	/**
 	 * This function simply invokes the getTotalScore method of 
@@ -201,4 +200,5 @@ public class Game{
 	public int getTotalScore(){
 		return scoreBoard.getTotalScore();
 	} //closes getTotalScore()
+	
 } //closes Game class
