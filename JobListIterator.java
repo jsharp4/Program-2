@@ -16,8 +16,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 /**
- * This class implements Iterator<Job> and establishes the methods hasNext() and
- * next().  
+ * This class implements Iterator<Job> and establishes the 
+ * methods hasNext() and next().  
  * <p>Bugs: None that we are aware of
  *
  * @author Jon Sharp, Michael Yang, Lindsey Bohr, Allison Quick, Kendra Raczek
@@ -29,11 +29,11 @@ public class JobListIterator implements Iterator<Job> {
 	//pointer for the position within the list
 	private int position;
 	
-	/*This constructor assigns the parameters items and numItems to
-	 *their corresponding variables and marks position as 0.
-	 *@param Listnode<Job> items
+	/* This constructor assigns the parameters items and numItems to
+	 * their corresponding variables and marks position as 0.
+	 * @param Listnode<Job> items
 	 *	Job items stored a Listnode
-	 *@param int numItems
+	 * @param int numItems
 	 *	number of items in a Listnode
 	 */
 	public JobListIterator(Listnode<Job> items, int numItems) {
@@ -41,27 +41,29 @@ public class JobListIterator implements Iterator<Job> {
 			if (items == null) {
 				throw new IllegalArgumentException();
 			}
-		} catch (IllegalArgumentException e) {
-			System.out.print("Cannot create an iterator with with a null list.");
+		} 
+		catch (IllegalArgumentException e) {
+			System.out.print("Cannot create an iterator" 
+					 + " with a null list.");
 		}
 		this.items = items;
 		this.numItems = numItems;
 		position = 0;
 	} //closes constructor
 	
-	/*This method checks to see if there are more items in the listNode
-	 *@return true
+	/* This method checks to see if there are more items in the listNode
+	 * @return true
 	 *	iff the position is less than numItems
 	 */
 	public boolean hasNext() {
 		return position < numItems;
 	} //closes hasNext()
 	
-	/*This method returns the data at a particular location and
-	 *increments the position. 
+	/* This method returns the data at a particular location and
+	 * increments the position. 
 	 * @throws NoSuchElementException()
 	 *	If there is not a next value, the exception is thrown
-	 *@return items.getData()
+	 * @return items.getData()
 	 *	returns the data at a particular position
 	 */
 	public Job next() {
@@ -69,8 +71,10 @@ public class JobListIterator implements Iterator<Job> {
 			if (!hasNext()) {
 				throw new NoSuchElementException();
 			}
-		} catch (NoSuchElementException e) {
-			System.out.print("Next element not found in job list");
+		} 
+		catch (NoSuchElementException e) {
+			System.out.print("Next element" 
+					 + " not found in job list");
 		}
 		items = items.getNext();
 		position++;
@@ -78,17 +82,18 @@ public class JobListIterator implements Iterator<Job> {
 
 	} //closes next()
 
-	/*removes the Job at the current position in the list. However, it is not
-	 *supported by JobListIterator, and will throw an UnsupportedOperationException
-	 *if thrown.
+	/* This method removes the Job at the current position in the list.
+	 * However, it is not supported by JobListIterator, and will 
+	 * throw an UnsupportedOperationException if called.
 	 */
 	public void remove() {
 		try {
 			throw new UnsupportedOperationException();
 		}
 		catch (UnsupportedOperationException e){
-			System.out.print("JobListIterator does not support the remove() method.");
+			System.out.print("JobListIterator does not support"
+					 + " the remove() method.");
 		}
-	}
+	} //closes remove()
 
 }//closes JobListIterator
