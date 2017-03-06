@@ -34,7 +34,7 @@ public class JobList implements ListADT<Job> {
 	public JobList() {
 		head = new Listnode<Job>(null);
 		numItems = 0;
-	} //closes JobList conostructor
+	} //closes JobList constructor
 	
 	/* This method establishes a new iterator of jobs with a head
 	 * reference and numItems.
