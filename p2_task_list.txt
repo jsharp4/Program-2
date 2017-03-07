@@ -116,7 +116,7 @@ Task List Usage:
   +J main: get the command line arguments (use the getIntegerInput method)
   +J Add the Welcome message as output
   +J main: construct a Game instance with the command line values
-    - Try calling Game methods to see if Game was constructed
+    +J Try calling Game methods to see if Game was constructed
       and initialized correctly.
       
 + Task 10: Define a main_menu_loop() method: 
